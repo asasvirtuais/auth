@@ -1,21 +1,13 @@
 {
-  "name": "@asasvirtuais/auth",
+  "name": "asasvirtuais-auth",
   "version": "0.1.0",
-  "private": true,
   "exports": {
-    ".": "./src/index.ts",
-    "./auth0": "./auth0/index.ts",
-    "./oauth": "./oauth/index.ts",
-    "./jwt": "./jwt/index.ts"
+    "./*": "./dist/*",
+    "./src/*": "./src/*"
   },
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
   "scripts": {
     "build": "tsc --build",
     "dev": "tsc --build --watch"
-  },
-  "dependencies": {
-    "@asasvirtuais/blueprint": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.15.21",
@@ -23,5 +15,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@auth0/nextjs-auth0": "^4.6.1"
+  }
 }

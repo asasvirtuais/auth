@@ -1,5 +1,5 @@
 import { Auth0Client } from '@auth0/nextjs-auth0/server'
-import feathers from '@/src/database'
+// import feathers from '@/src/database'
 // import { cookies } from 'next/headers'
 
 declare module '@auth0/nextjs-auth0/server' {
@@ -17,23 +17,23 @@ export const auth0 = new Auth0Client({
       throw new Error('User not found')
     let user
     // const guestId = `${(await cookies()).get('guest-key')?.value}`
-    const found = await feathers.service('users').find({
-        query: { auth0_id: sub }
-    })
-    if (found.length === 0) {
-      user = await feathers.service('users').create({
-        name: suser.name as string,
-        auth0_id: sub,
-      })
-    } else {
-      user = found[0]
-    }
+    // const found = await feathers.service('users').find({
+    //     query: { auth0_id: sub }
+    // })
+    // if (found.length === 0) {
+    //   user = await feathers.service('users').create({
+    //     name: suser.name as string,
+    //     auth0_id: sub,
+    //   })
+    // } else {
+    //   user = found[0]
+    // }
     if ( ! user )
       throw new Error('User not found')
     return {
       ...session,
       user:{
-        id: user?.id,
+        // id: user?.id,
         ...session.user,
       }
     }
