@@ -2,8 +2,7 @@
   "name": "asasvirtuais-auth",
   "version": "0.1.1",
   "exports": {
-    "./*": "./dist/*",
-    "./src/*": "./src/*"
+    "./*": "./dist/*"
   },
   "scripts": {
     "build": "tsc --build",
