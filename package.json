@@ -1,6 +1,7 @@
 {
   "name": "asasvirtuais-auth",
-  "version": "0.1.2",
+  "type": "module",
+  "version": "0.1.3",
   "exports": {
     "./*": "./dist/*"
   },

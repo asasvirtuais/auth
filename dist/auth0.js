@@ -1,9 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.auth0 = void 0;
-const server_1 = require("@auth0/nextjs-auth0/server");
+import { Auth0Client } from '@auth0/nextjs-auth0/server';
 // Inicialização do cliente Auth0
-exports.auth0 = new server_1.Auth0Client({
+export const auth0 = new Auth0Client({
     async beforeSessionSaved(session) {
         const sub = session?.user?.sub;
         const suser = session?.user;
@@ -33,5 +30,5 @@ exports.auth0 = new server_1.Auth0Client({
         };
     }
 });
-exports.default = exports.auth0;
-//# sourceMappingURL=index.js.map
+export default auth0;
+//# sourceMappingURL=auth0.js.map
