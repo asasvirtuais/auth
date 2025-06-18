@@ -2,11 +2,11 @@ import { Auth0Client } from '@auth0/nextjs-auth0/server';
 // Inicialização do cliente Auth0
 export const auth0 = new Auth0Client({
     async beforeSessionSaved(session) {
-        const sub = session?.user?.sub;
         const suser = session?.user;
         if (!suser)
             throw new Error('User not found');
-        let user;
+        // const sub = session?.sub
+        // let user
         // const guestId = `${(await cookies()).get('guest-key')?.value}`
         // const found = await feathers.service('users').find({
         //     query: { auth0_id: sub }
@@ -19,8 +19,8 @@ export const auth0 = new Auth0Client({
         // } else {
         //   user = found[0]
         // }
-        if (!user)
-            throw new Error('User not found');
+        // if ( ! user )
+        //   throw new Error('User not found')
         return {
             ...session,
             user: {

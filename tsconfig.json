@@ -16,12 +16,6 @@
     "skipLibCheck": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
-    "plugins": [
-      {
-        "name": "next"
-      },
-    ],
-    "composite": true,
     "outDir": "./dist",
     "rootDir": "./src",
     "baseUrl": "."
