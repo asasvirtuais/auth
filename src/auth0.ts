@@ -40,4 +40,8 @@ export const auth0 = new Auth0Client({
   }
 })
 
+export async function getUser() {
+  return (await auth0.getSession())?.user
+}
+
 export default auth0
