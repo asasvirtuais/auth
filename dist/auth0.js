@@ -1,4 +1,5 @@
 import { Auth0Client } from '@auth0/nextjs-auth0/server';
+import { redirect } from 'next/navigation';
 // Inicialização do cliente Auth0
 export const auth0 = new Auth0Client({
     async beforeSessionSaved(session) {
@@ -32,6 +33,12 @@ export const auth0 = new Auth0Client({
 });
 export async function getUser() {
     return (await auth0.getSession())?.user;
+}
+export async function getUserOrRedirect(query = '') {
+    const user = (await auth0.getSession())?.user;
+    if (!user)
+        return redirect('/auth/login' + query);
+    return user;
 }
 export default auth0;
 //# sourceMappingURL=auth0.js.map

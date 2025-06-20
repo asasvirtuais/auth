@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "nodenext",
-    "lib": ["ESNext"],
+    "module": "esnext",
+    "lib": ["ESNext", "DOM"],
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "nodenext",
+    "moduleResolution": "node",
     "isolatedModules": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
@@ -18,9 +18,18 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "types": ["node"],
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
+    "next-env.d.ts",
     "src",
   ],
   "exclude": [
